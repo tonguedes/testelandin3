@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     form.reset();
 
                     setTimeout(function () {
-                        window.location.href = "sucesso.php";
+                        window.location.href = "sucesso.html";
                     }, 100);
                 }
             }, 500);
@@ -156,3 +156,24 @@ telefoneInputs.forEach(input => {
         event.target.value = value;
     });
 });
+
+
+// Seleciona o elemento <select>
+const selectElement = document.querySelector('.custom-select');
+
+// Obtém todos os elementos <option>
+const options = selectElement.querySelectorAll('option');
+
+// Cria um array para armazenar os valores dos options
+const optionValues = [];
+
+// Percorre os <option> e pega os valores
+options.forEach(option => {
+    if (option.value) { // Garante que não pegue o <option> desabilitado
+        optionValues.push(option.value);
+    }
+});
+
+// Exibe os valores no console
+console.log(optionValues);
+
